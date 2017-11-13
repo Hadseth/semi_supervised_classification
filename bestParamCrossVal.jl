@@ -18,8 +18,8 @@ bestParamCrossVal = function(Karray,y,funcToTest,preParValuesArray,parValuesArra
       foldResultsValue = Float64[]
       totalNumber = 0
       for intFold in sort(unique(intFoldsLabels))
-        indexTrainInt = ((extFoldsLabels.==extFold)&(intFoldsLabels.!=intFold))
-        indexTestInt = ((extFoldsLabels.==extFold)&(intFoldsLabels.==intFold))
+        indexTrainInt = ((extFoldsLabels.==extFold) .& (intFoldsLabels.!=intFold))
+        indexTestInt = ((extFoldsLabels.==extFold) .& (intFoldsLabels.==intFold))
 
         if par != false
           labPrediction = funcToTest(K,y,indexTrainInt,indexTestInt,par...)
